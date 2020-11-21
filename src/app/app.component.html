@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div class="wrap">
+  <header class="header">
+    Logo - TITULO
+  </header>
+
+  <nav class="nav">
+    <a routerLink="/home">Inicio</a>
+    <a routerLink="/news">Notícias</a>
+    <a routerLink="/about">Sobre</a>
+    <a routerLink="/contacts">Contatos</a>
+  </nav>
+
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    &copy; By Gabriel Martins, 2020
+  </footer>
+</div>
