@@ -1,13 +1,26 @@
 <div class="wrap">
-  <header class="header">
-    Logo - TITULO
+  <header class="header" routerLink="/">
+    <i class="fas fa-spider fa-fw fa-3x" title="Página inicial"></i>
+    <h1>
+      CarePets
+      <small>Um lar par o seu pet</small>
+    </h1>
+
   </header>
 
   <nav class="nav">
-    <a routerLink="/home">Inicio</a>
-    <a routerLink="/news">Notícias</a>
-    <a routerLink="/about">Sobre</a>
-    <a routerLink="/contacts">Contatos</a>
+    <a routerLink="/">
+      <ion-icon name="home-outline"></ion-icon> Início
+    </a>
+    <a routerLink="/news">
+      <ion-icon name="newspaper-outline"></ion-icon> Notícias
+    </a>
+    <a routerLink="/contacts">
+      <ion-icon name="chatbubbles-outline"></ion-icon> Contatos
+    </a>
+    <a routerLink="/about">
+      <ion-icon name="information-circle-outline"></ion-icon> Sobre
+    </a>
   </nav>
 
   <main class="main">
@@ -15,6 +28,12 @@
   </main>
 
   <footer class="footer">
-    &copy; By Gabriel Martins, 2020
+    <a routerLink="/">
+      <ion-icon name="home-outline"></ion-icon>
+    </a>
+    <small>&copy; By Gabriel Martins, 2020</small>
+    <a (click)="anchorLink('top')">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
   </footer>
 </div>

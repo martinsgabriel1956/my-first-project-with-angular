@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './pages/about/about.component';
@@ -6,6 +6,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { E404Component } from './pages/e404/e404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
+import { ViewComponent } from './pages/view/view.component';
 
 const routes: Routes = [
  //Rota padrão da página principal
@@ -43,6 +44,14 @@ const routes: Routes = [
     data: { title: 'Sobre' }
 
   },
+
+   // Aula 08) Rota para exibir um artigo único
+   {
+    path: 'view/:id',
+    component: ViewComponent,
+    data: { title: 'Artigo' }
+  },
+
 //Rota para a página 'e404'
   {
     path: '**', 
@@ -52,7 +61,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
