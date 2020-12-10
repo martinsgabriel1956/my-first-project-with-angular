@@ -1,0 +1,16 @@
+.article {
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+.article h4 {
+  margin: 0;
+}
+
+.article img {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  margin-bottom: .5rem;
+  float: left;
+}
