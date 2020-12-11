@@ -13,7 +13,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LoginComponent } from './pages/login/login.component';
 import { ViewComponent } from './pages/view/view.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { ViewComponent } from './pages/view/view.component';
     NewsComponent,
     E404Component,
     HomeComponent,
-    ViewComponent
+    ViewComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

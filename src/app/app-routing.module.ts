@@ -8,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ViewComponent } from './pages/view/view.component';
 
+// Aula 09) Importa a página 'login'
+import { LoginComponent } from './pages/login/login.component';
+
 const routes: Routes = [
  //Rota padrão da página principal
   {

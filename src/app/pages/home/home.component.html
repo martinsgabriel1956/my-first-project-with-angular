@@ -12,6 +12,21 @@
   </article>
  
   <aside class="col-right">
+    <div *ngIf="auth.user | async as user; else showLogin">
+      &nbsp;
+      <div class="user-data">
+        <img src="{{ user.photoURL }}" alt="{{ user.displayName }}">
+        <small><strong>{{ user.displayName }}</strong></small>
+      </div>
+    </div>
+
+    <ng-template #showLogin>
+      <h3>Faça login</h3>
+      <small>Logue-se para ter acesso aos artigos completos. É de graça!</small>
+      <button class="center primary" routerLink="/login"><i class="fas fa-sign-in-alt fa-fw"></i> Entrar /
+        Login</button>
+    </ng-template>
+
     <h3>Sidebar</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo consequatur cumque eligendi odit. Dolor tempore, earum, officiis minima numquam enim, accusamus nam magni praesentium quae adipisci expedita in asperiores.</p>
   </aside>
