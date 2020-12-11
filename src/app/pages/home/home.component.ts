@@ -6,6 +6,17 @@ import { Observable } from 'rxjs';
 // 09) Importa autenticação
 import { AngularFireAuth } from '@angular/fire/auth';
 
+// Aula 08) Estrutura do documento
+export interface Art {
+  date: string;
+  title: string;
+  intro: string;
+  text: string;
+  status: string;
+  img: string;
+  artId: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

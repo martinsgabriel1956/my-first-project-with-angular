@@ -1,14 +1,3 @@
-nav {
-  background-color: #DEDEDE;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-nav a {
-  padding: .5rem;
-} 
-
 .wrap {
   width: 100%;
   max-width: 1024px;

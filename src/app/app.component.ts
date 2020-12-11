@@ -1,4 +1,3 @@
-// Importar dependencias
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
