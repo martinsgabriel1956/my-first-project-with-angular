@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(provider: string) {
+  login(provider: string): void {
 
     switch(provider) {
       case 'google':
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           () => {
             this.router.navigate(['/']);
           }
-        );;
+        );
         break;
     }
   }
