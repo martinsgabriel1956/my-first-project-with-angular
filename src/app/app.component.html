@@ -1,13 +1,24 @@
 <div class="wrap">
-  <header class="header">
-    Logo - TITULO
+  <header class="header" routerLink="/">
+    <i class="fas fa-paw fa-fw fa-3x" title="Página inicial"></i>
+
+    <h1>CarePets</h1>
+    <small>Em buscar de uma casa para o seu amiguinho</small>
   </header>
 
   <nav class="nav">
-    <a routerLink="/home">Inicio</a>
-    <a routerLink="/news">Notícias</a>
-    <a routerLink="/about">Sobre</a>
-    <a routerLink="/contacts">Contatos</a>
+    <a routerLink="/">
+      <i class="fas fa-home fa-fw"></i> Início
+    </a>
+    <a routerLink="/news">
+      <i class="fas fa-newspaper fa-fw"></i> Notícias
+    </a>
+    <a routerLink="/contacts">
+      <i class="fas fa-comments fa-fw"></i> Contatos
+    </a>
+    <a routerLink="/about">
+      <i class="fas fa-info-circle fa-fw"></i> Sobre
+    </a>
   </nav>
 
   <main class="main">
@@ -15,6 +26,8 @@
   </main>
 
   <footer class="footer">
+    <a routerLink="/"><i class="fas fa-home fa-fw"></i></a>
     &copy; By Gabriel Martins, 2020
+    <a (click)="anchorLink('top')"><i class="far fa-arrow-alt-circle-up fa-fw"></i></a>
   </footer>
 </div>

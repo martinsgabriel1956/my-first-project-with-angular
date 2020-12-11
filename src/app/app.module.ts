@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,10 @@ import { ViewComponent } from './pages/view/view.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     IonicModule
   ],
-  providers: [],
+  providers: [
+    // Permite alterar o título da página
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
