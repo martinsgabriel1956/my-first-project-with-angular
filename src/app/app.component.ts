@@ -4,6 +4,10 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 // Importa filter e map
 import { filter, map } from 'rxjs/operators';
+
+// Importa autenticação
+import { AngularFireAuth } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,10 +26,13 @@ export class AppComponent implements OnInit {
     // Cria objeto 'ActivatedRoute'
     public activatedRoute: ActivatedRoute,
 
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    
+    // Injeta autenticação
+    public auth: AngularFireAuth,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // Obtém o conteúdo da tag <title></title>
     const appTitle = this.titleService.getTitle();
     // Obtém o título da rota

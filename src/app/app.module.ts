@@ -15,6 +15,9 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './pages/login/login.component';
 import { ViewComponent } from './pages/view/view.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { ViewComponent } from './pages/view/view.component';
     HomeComponent,
     ViewComponent,
     LoginComponent,
+    ProfileComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { ViewComponent } from './pages/view/view.component';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
-    IonicModule
+    IonicModule,
+    RouterModule
   ],
   providers: [
     // Permite alterar o título da página
