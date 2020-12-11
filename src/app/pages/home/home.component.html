@@ -2,7 +2,7 @@
   <article class="col-left">
     <h2>Artigos Recentes</h2>
     
-    <div class="articles">
+    <div class="articles" *ngIf="items">
       <div class="article" *ngFor="let item of items | async">
         <img src="{{ item.img }}" alt="{{ item.title }}">
         <h4><a routerLink="/view/{{ item.artId }}">{{ item.title }}</a></h4>
