@@ -1,24 +1,24 @@
 .profile {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
 }
 
 .profile img {
   display: block;
   width: 100px;
   height: 100px;
-  margin: 1rem auto;
+  border-radius: .4rem;
 }
 
 .profile ul {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
   font-size: small;
 }
 
-small.provider {
+.col-left small {
   display: block;
   text-align: center;
   margin-top: -0.8rem;
@@ -27,8 +27,6 @@ small.provider {
 @media (min-width: 800px) {
   .profile {
     flex-direction: row;
-  }
-  .profile img {
-    margin: 0;
+    justify-content: center;
   }
 }

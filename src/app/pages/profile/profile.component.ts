@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+// Aula 10) Importa dependências
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -8,28 +10,33 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ProfileComponent implements OnInit {
 
-  profileURL: any;
+  // Atributos
+  profileURL: string;
 
   constructor(
+
+    // Aula 10) Injeta dependências
     public auth: AngularFireAuth,
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  editProfile(provider: string): boolean {
+  editProfile(provider: string): any {
 
     switch (provider) {
+
       case 'google.com':
-        this.profileURL = 'https://myaccount.google.com/';
+        this.profileURL = `https://google.com/account`;
         break;
+
       case 'facebook.com':
-        this.profileURL = 'https://www.facebook.com/profile';
+        this.profileURL = 'https://facebook.com/profile';
         break;
+
       default:
         return false;
     }
-
     window.open(this.profileURL);
   }
+
 }

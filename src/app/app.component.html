@@ -1,50 +1,51 @@
 <div class="wrap">
+
   <header class="header">
+
     <i class="fas fa-paw fa-fw fa-3x" title="Página inicial" routerLink="/"></i>
+    <h1>CarePets
+      <small>Em buscar de uma casa para o seu amiguinho</small>
+    </h1>
 
-    <h1>CarePets</h1>
-    <small>Em buscar de uma casa para o seu amiguinho</small>
-
-    <div class="user">
-
-      <div *ngIf="auth.user | async as user; else showLogin">
-        <img src="{{ user.photoURL }}" alt="{{ user.displayName }}" title="{{ user.displayName }}"
-          routerLink="/profile">
-      </div>
-
-      <ng-template #showLogin>
-        <button class="center primary" routerLink="/login"><i class="fas fa-sign-in-alt fa-fw"></i>Login</button>
-      </ng-template>
-
+    <div *ngIf="auth.user | async as user; else showLogin">
+      <img src="{{ user.photoURL }}" alt="{{ user.displayName }}" title="Perfil de {{ user.displayName }}." routerLink="/profile">
     </div>
+
+    <ng-template #showLogin>
+      <button class="center primary" routerLink="/login">
+        <i class="fas fa-sign-in-alt fa-fw"></i>
+        Login
+      </button>
+    </ng-template>
+
   </header>
 
   <nav class="nav">
     <a routerLink="/">
-      <ion-icon name="home-outline"></ion-icon> Início
+      <i class="fas fa-home fa-fw"></i> Início
     </a>
     <a routerLink="/news">
-      <ion-icon name="newspaper-outline"></ion-icon> Notícias
+      <i class="fas fa-newspaper fa-fw"></i> Notícias
     </a>
     <a routerLink="/contacts">
-      <ion-icon name="chatbubbles-outline"></ion-icon> Contatos
+      <i class="fas fa-comments fa-fw"></i> Contatos
     </a>
     <a routerLink="/about">
-      <ion-icon name="information-circle-outline"></ion-icon> Sobre
+      <i class="fas fa-info-circle fa-fw"></i> Sobre
     </a>
   </nav>
 
   <main class="main">
+
     <router-outlet></router-outlet>
+
   </main>
 
   <footer class="footer">
-    <a routerLink="/">
-      <ion-icon name="home-outline"></ion-icon>
-    </a>
-    <small>&copy; By Gabriel Martins, 2020</small>
-    <a (click)="anchorLink('top')">
-      <ion-icon name="arrow-up-outline"></ion-icon>
-    </a>
+    <a routerLink="/"><i class="fas fa-home fa-fw"></i></a>
+    <small>&copy; Copyright 2020 André Luferat</small>
+    <a (click)="anchorLink('top')"><i class="far fa-arrow-alt-circle-up fa-fw"></i></a>
   </footer>
+
 </div>
+

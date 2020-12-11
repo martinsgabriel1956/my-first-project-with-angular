@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// News 1) Importa dependências
+// Aula 11) Importa dependências
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,28 +9,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-
+  
+  // Aula 11) Atributos
   apiKey = '18a25c1feed841af9cd2bf1a5225f707'; // API Key do serviço, obtida em 'https://newsapi.org/account'
-  apiQuery = 'pets'; // Assunto 'base' da busca
-  apiItems = 15;
+  apiQuery = 'Pets'; // Palavra chave de busca
+  apiItens = 10; // Quantidade de notícias à exibir. No máximo de 20.
 
-  // URL da API. Não altere!
-  apiURL = `http://newsapi.org/v2/everything?apiKey=${this.apiKey}&language=pt&source=google-news&q=${this.apiQuery}}`;
-  newsList: any; // View das notícias obtidas
-
+  // Aula 11) Cuidado ao alterar
+  apiURL = `http://newsapi.org/v2/everything?apiKey=${this.apiKey}&source=google-news-br&language=pt&q=${this.apiQuery}`;
+  newsList: any;
 
   constructor(
-    // News 2) Injeta dependências
-    private http: HttpClient // Cria objeto tipo 'HttpClient'
+
+    // Aula 11) Injeta dependências
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
-    // News 4) Obtém dados da API REST (JSON)
+
+    // Aula 11) Obtém notícias da API REST
     this.http.get(this.apiURL).subscribe(
       (data: any) => {
-
-        // News 5) Atribui à view de notícias, obtendo somente a quantidade solicitada
-        this.newsList = data.articles.slice(0, this.apiItems);
-    });
+        this.newsList = data.articles.slice(0, this.apiItens);
+        // console.log(this.newsList);
+      }
+    );
   }
 }

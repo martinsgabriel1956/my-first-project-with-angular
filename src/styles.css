@@ -1,7 +1,7 @@
+/* Reset básico */
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   outline: none;
 }
 
@@ -9,8 +9,11 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #222;
+  font-size: 16px;
+  background: #000;
   color: #dfdfdf;
 }
 
@@ -20,15 +23,15 @@ header, nav, main, aside, footer {
 }
 
 a {
-  color: #4682b4;
-  text-emphasis: none;
+  color: steelblue;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #ff4500;
+  color: orangered;
 }
 
-.main-row {
+.row {
   display: flex;
   position: relative;
   height: 100%;
@@ -37,39 +40,31 @@ a:hover {
   padding-bottom: 1rem;
 }
 
-aside {
+.col-right {
   margin-top: 1rem;
   background: rgba(255, 255, 255, .1);
   padding: 0 1rem;
   overflow: hidden;
 }
 
-aside h3 {
-  border-bottom: 3px dotted grey;
-  margin: 0 -1rem;
-  padding: .6rem 1rem .5rem 1rem;
-  background: rgba(255, 255, 255, .1);
-}
-
 @media (min-width: 640px) {
-  .main-row {
+  .row {
     flex-direction: row;
   }
-  article {
+  .col-left {
     flex: 1;
     padding-right: 1rem;
   }
-  aside {
+  .col-right {
     width: 11rem;
   }
 }
 
 @media (min-width: 768px) {
-  aside {
+  .col-right {
     width: 13rem;
   }
 }
-
 
 /* HTML buttons */
 
@@ -99,12 +94,15 @@ button.primary {
   color: white;
 }
 
-button.primary:disabled, button.primary:disabled:hover {
+button.primary:hover {
+  background: orangered;
+}
+
+button.primary:disabled {
   background: grey;
-  color: #444;
   cursor: not-allowed;
 }
 
-button.primary:hover {
-  background: orangered;
+.danger {
+  color: orangered;
 }

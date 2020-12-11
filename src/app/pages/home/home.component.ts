@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AngularFirestore} from '@angular/fire/firestore';
+// Aula 08) Importa dependências
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 // Aula 08) Estrutura do documento
@@ -20,23 +21,22 @@ export interface Art {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   // Aula 08) Atributos do objeto
-  items: Observable<any>;
+  private itemsCollection: AngularFirestoreCollection<Art>;
+  items: Observable<Art[]>;
 
   constructor(
 
     // Aula 08) Injeta dependências
-    private afs: AngularFirestore
-) {
+    private afs: AngularFirestore,
+  ) {
 
     // Aula 08) Conectando ao Firestore
-    this.items = afs.collection(
-      'articles',
-      ref => ref
-      .where('status', '==', 'ativo')
-      .orderBy('date', 'desc')
-    ).valueChanges({ idField: 'artId' });
+    this.itemsCollection = afs.collection<Art>('articles', ref => ref.where('status', '==', 'ativo').orderBy('date', 'desc'));
+    this.items = this.itemsCollection.valueChanges({ idField: 'artId' });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
 }
