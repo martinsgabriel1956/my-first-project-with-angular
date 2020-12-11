@@ -56,6 +56,13 @@ a:hover {
   }
 }
 
+@media (min-width: 768px) {
+  .col-right {
+    width: 13rem;
+  }
+}
+
+
 /* HTML buttons */
 
 button {
