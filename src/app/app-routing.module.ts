@@ -7,6 +7,12 @@ import { E404Component } from './pages/e404/e404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
 
+// Aula 08) Importa a página 'view'
+import { ViewComponent } from './pages/view/view.component';
+
+// Aula 09) Importa a página 'login'
+import { LoginComponent } from './pages/login/login.component';
+
 const routes: Routes = [
  //Rota padrão da página principal
   {
@@ -43,6 +49,20 @@ const routes: Routes = [
     data: { title: 'Sobre' }
 
   },
+  // Aula 08) Rota para exibir um artigo único
+  {
+    path: 'view/:id',
+    component: ViewComponent,
+    data: { title: 'Artigo' }
+  },
+
+  // Aula 09) Página de login
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Faça login' }
+  },
+
 //Rota para a página 'e404'
   {
     path: '**', 
@@ -52,7 +72,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
