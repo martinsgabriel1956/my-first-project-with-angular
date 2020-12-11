@@ -3,9 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-// 09) Importa autenticação
-import { AngularFireAuth } from '@angular/fire/auth';
-
 // Aula 08) Estrutura do documento
 export interface Art {
   date: string;
@@ -29,9 +26,7 @@ export class HomeComponent implements OnInit {
   constructor(
 
     // Aula 08) Injeta dependências
-    private afs: AngularFirestore,
-    // 09) Injeta autenticação
-    public auth: AngularFireAuth,
+    private afs: AngularFirestore
 ) {
 
     // Aula 08) Conectando ao Firestore
@@ -44,7 +39,4 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  
-  
-
 }
