@@ -17,11 +17,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ditProfile(provider: string): boolean {
+  editProfile(provider: string): boolean {
 
     switch (provider) {
       case 'google.com':
-        this.profileURL = 'https://myaccount.google.com/profile';
+        this.profileURL = 'https://myaccount.google.com/';
         break;
       case 'facebook.com':
         this.profileURL = 'https://www.facebook.com/profile';
