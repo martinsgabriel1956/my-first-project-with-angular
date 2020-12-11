@@ -19,6 +19,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { RouterModule } from '@angular/router';
 
+// News 1) Importar dependências
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +42,11 @@ import { RouterModule } from '@angular/router';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase),
     IonicModule,
-    RouterModule
+    RouterModule,
+      
+    // News 2) Inicializa o módulo HTTP
+    HttpClientModule
   ],
   providers: [
     // Permite alterar o título da página
